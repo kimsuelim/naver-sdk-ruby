@@ -143,6 +143,23 @@ Naver::Share.url(url: "https://github.com/kimsuelim", title: "The unofficial NAV
 # => "http://share.naver.com/web/shareView.nhn?url=https%3A%2F%2Fgithub.com%2Fkimsuelim&title=The+unofficial+NAVER+SDK+for+Ruby"
 ```
 
+## 클로바
+
+### 음성합성(Beta)
+```
+response = Naver::Clova.tts(
+  speaker: "mijin",
+  speed: 0,
+  text: "기술이 인간을 대체하는 것이 아니라 인간은 기술의 도움으로 더욱 창조적으로 될 것이라는 믿는다."
+)
+
+file = File.open("tts.mp3", "wb") { |f| f.write(response) }
+# => 62532
+```
+
+### 얼굴인식(Beta)
+TODO...
+
 ## 검색
 
 ### 블로그

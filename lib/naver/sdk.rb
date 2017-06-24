@@ -9,6 +9,7 @@ require "naver/error"
 require "naver/oauth"
 require "naver/objectified_hash"
 
+require "naver/clova"
 require "naver/map"
 require "naver/papago"
 require "naver/profile"
