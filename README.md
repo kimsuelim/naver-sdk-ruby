@@ -489,7 +489,7 @@ traffic:
 Naver.configure do |config|
   config.debug = true
 end
-Naver::Search.blog(query: "집밥")
+Naver::Search.blog(query: "블로그")
 ```
 ```
 I, [2017-06-24T11:59:40.920421 #54253]  INFO -- : get https://openapi.naver.com/v1/search/blog?query=%EC%A7%91%EB%B0%A5

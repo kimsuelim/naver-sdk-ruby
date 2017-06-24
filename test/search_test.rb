@@ -12,7 +12,7 @@ class SearchTest < Minitest::Spec
   end
 
   it "book" do
-    response = Naver::Search.book(query: "집밥")
+    response = Naver::Search.book(query: "책")
     common_assertions(response)
   end
 
@@ -25,7 +25,7 @@ class SearchTest < Minitest::Spec
   end
 
   it "encyc" do
-    response = Naver::Search.encyc(query: "집밥")
+    response = Naver::Search.encyc(query: "백과 사전")
     common_assertions(response)
   end
 
@@ -35,17 +35,17 @@ class SearchTest < Minitest::Spec
   end
 
   it "cafearticle" do
-    response = Naver::Search.cafearticle(query: "집밥")
+    response = Naver::Search.cafearticle(query: "카페글")
     common_assertions(response)
   end
 
   it "kin" do
-    response = Naver::Search.kin(query: "집밥")
+    response = Naver::Search.kin(query: "지식인")
     common_assertions(response)
   end
 
   it "local" do
-    response = Naver::Search.local(query: "집밥")
+    response = Naver::Search.local(query: "제주도")
     common_assertions(response)
   end
 
@@ -58,22 +58,22 @@ class SearchTest < Minitest::Spec
   end
 
   it "webkr" do
-    response = Naver::Search.webkr(query: "집밥")
+    response = Naver::Search.webkr(query: "웹문서")
     common_assertions(response)
   end
 
   it "image" do
-    response = Naver::Search.image(query: "집밥")
+    response = Naver::Search.image(query: "이미지")
     common_assertions(response)
   end
 
   it "shop" do
-    response = Naver::Search.shop(query: "플스4")
+    response = Naver::Search.shop(query: "쇼핑")
     common_assertions(response)
   end
 
   it "doc" do
-    response = Naver::Search.doc(query: "집밥")
+    response = Naver::Search.doc(query: "전문자료")
     common_assertions(response)
   end
 
