@@ -15,5 +15,5 @@ All notable changes to this project will be documented in this file.
 - first release
 
 [0.1.0]: https://github.com/kimsuelim/naver-sdk-ruby/releases/tag/v0.1.0
-[0.2.0]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.2.0...v0.1.0
-[unreleased]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.1.0...HEAD
+[0.2.0]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.1.0...v0.2.0
+[unreleased]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.2.0...HEAD
