@@ -1,5 +1,7 @@
 # NAVER SDK for Ruby
 
+[![Join the chat at https://gitter.im/naver-sdk-ruby/Lobby](https://badges.gitter.im/naver-sdk-ruby/Lobby.svg)](https://gitter.im/naver-sdk-ruby/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/kimsuelim/naver-sdk-ruby.svg?branch=master)](https://travis-ci.org/kimsuelim/naver-sdk-ruby)
 [![Coverage Status](https://coveralls.io/repos/github/kimsuelim/naver-sdk-ruby/badge.svg?branch=master)](https://coveralls.io/github/kimsuelim/naver-sdk-ruby?branch=master)
 [![Gem Version](https://badge.fury.io/rb/naver-sdk.svg)](http://badge.fury.io/rb/naver-sdk)
