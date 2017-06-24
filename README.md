@@ -1,7 +1,7 @@
 # NAVER SDK for Ruby
 
 [![Build Status](https://travis-ci.org/kimsuelim/naver-sdk-ruby.svg?branch=master)](https://travis-ci.org/kimsuelim/naver-sdk-ruby)
-[![Coverage Status](https://coveralls.io/repos/kimsuelim/naver-sdk-ruby/badge.svg?branch=master)](https://coveralls.io/r/kimsuelim/naver-sdk-ruby?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/kimsuelim/naver-sdk-ruby/badge.svg?branch=master)](https://coveralls.io/github/kimsuelim/naver-sdk-ruby?branch=master)
 [![Gem Version](https://badge.fury.io/rb/naver-sdk.svg)](http://badge.fury.io/rb/naver-sdk)
 
 A ruby client for the NAVER API. [https://developers.naver.com](https://developers.naver.com)
