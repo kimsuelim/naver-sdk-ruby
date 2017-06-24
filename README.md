@@ -213,11 +213,11 @@ puts search_results.items[0].title
 ```ruby
 response = Naver::Search.adult(query: "성인")
 puts response.adult
-# => "1"
+# => true
 
 response = Naver::Search.adult(query: "청소년")
 puts response.adult
-# => "0"
+# => false
 ```
 
 ### 백과 사전
@@ -331,13 +331,13 @@ puts search_results.items[0].title
 
 ### 오타변환
 ```ruby
-response = Naver::Search.errata(query: "집밥")
+response = Naver::Search.errata(query: "오타")
 puts response.errata
-# => ""
+# => nil
 
-response = Naver::Search.errata(query: "wlqqkq")
+response = Naver::Search.errata(query: "dhxk")
 puts response.errata
-# => "집밥"
+# => "오타"
 ```
 
 ### 웹문서

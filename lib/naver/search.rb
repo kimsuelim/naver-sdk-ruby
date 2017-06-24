@@ -23,7 +23,13 @@ module Naver # :nodoc:
       # Search > Adult (검색 > 성인 검색어 판별)
       # @param params [Hash] Params for the search
       def adult(params = {})
-        parse(JSON.parse(connection.get("/v1/search/adult", params).body))
+        result = JSON.parse(connection.get("/v1/search/adult", params).body)
+        if result["adult"] == "1"
+          result["adult"] = true
+        elsif result["adult"] == "0"
+          result["adult"] = false
+        end
+        parse(result)
       end
 
       # Search > Encyc (검색 > 백과 사전)
@@ -59,7 +65,9 @@ module Naver # :nodoc:
       # Search > Errata (검색 > 오타변환)
       # @param params [Hash] Params for the search
       def errata(params = {})
-        parse(JSON.parse(connection.get("/v1/search/errata", params).body))
+        result = JSON.parse(connection.get("/v1/search/errata", params).body)
+        result["errata"] = nil if result["errata"] == ""
+        parse(result)
       end
 
       # Search > Webkr (검색 > 웹문서)

@@ -18,10 +18,10 @@ class SearchTest < Minitest::Spec
 
   it "adult" do
     response = Naver::Search.adult(query: "청소년")
-    response.adult.must_equal "0"
+    response.adult.must_equal false
 
     response = Naver::Search.adult(query: "성인")
-    response.adult.must_equal "1"
+    response.adult.must_equal true
   end
 
   it "encyc" do
@@ -50,11 +50,11 @@ class SearchTest < Minitest::Spec
   end
 
   it "errata" do
-    response = Naver::Search.errata(query: "집밥")
-    response.errata.must_equal ""
+    response = Naver::Search.errata(query: "오타")
+    response.errata.must_be_nil
 
-    response = Naver::Search.errata(query: "wlqqkq")
-    response.errata.must_equal "집밥"
+    response = Naver::Search.errata(query: "dhxk")
+    response.errata.must_equal "오타"
   end
 
   it "webkr" do
