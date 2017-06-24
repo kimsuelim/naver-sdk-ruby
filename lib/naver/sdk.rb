@@ -13,6 +13,7 @@ require "naver/map"
 require "naver/papago"
 require "naver/profile"
 require "naver/search"
+require "naver/share"
 require "naver/shortenurl"
 
 module Naver

@@ -135,6 +135,14 @@ puts response.translatedText
 # => "To replace the technology not believe that humans are more creatively with the help of technology."
 ```
 
+## 네이버 공유하기
+
+### url
+```
+Naver::Share.url(url: "https://github.com/kimsuelim", title: "The unofficial NAVER SDK for Ruby")
+# => "http://share.naver.com/web/shareView.nhn?url=https%3A%2F%2Fgithub.com%2Fkimsuelim&title=The+unofficial+NAVER+SDK+for+Ruby"
+```
+
 ## 검색
 
 ### 블로그
