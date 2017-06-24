@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [unreleased]
-- 얼굴인식(Beta)
+- No significant changes.
 
 ## [0.2.0] - 2017-06-25
 - 음성합성(Beta)
