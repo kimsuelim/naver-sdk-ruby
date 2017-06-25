@@ -1,6 +1,6 @@
 module Naver # :nodoc:
-  # Naver Clova API
-  class Clova < Client
+  # Naver Voice API
+  class Voice < Client
     class << self
       # 음성합성(Beta)
       # @param speaker [String] 음성 합성할 목소리 설정: ( mijin:미진(한국어, 여성), jinho:진호(한국어, 남성), clara:클라라(영어, 여성), matt:매튜(영어, 남성), yuri:유리(일본어, 여성), shinji:신지(일본어, 남성), meimei:메이메이(중국어, 여성))
@@ -10,7 +10,6 @@ module Naver # :nodoc:
       def tts(speaker:, speed:, text:)
         params = method(__method__).parameters.map(&:last).map { |p| [p, eval(p.to_s)] }.to_h
         connection.post("/v1/voice/tts.bin", params).body
-      end
-    end
+      end end
   end
 end

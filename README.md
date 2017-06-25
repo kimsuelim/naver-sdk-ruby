@@ -95,6 +95,23 @@ puts response.faces[0].emotion.value
 
 테스트에서 사용한 이미지 보기 [test/resources/park.png](test/resources/park.png)
 
+## 음성합성
+입력된 텍스트를 성우의 낭독 음성으로 합성
+
+### tts(Beta)
+```
+response = Naver::Voice.tts(
+  speaker: "mijin",
+  speed: 0,
+  text: "기술은 사람을 대체하는 것이 아니라 기술의 도움으로 사람을 더 창조적으로 만들 것이라 믿는다."
+)
+
+file = File.open("tts.mp3", "wb") { |f| f.write(response) }
+# => 62532
+```
+
+합성된 음성 듣기 [test/resources/tts.mp3](test/resources/tts.mp3)
+
 ## 지도
 
 ### 주소 -> 좌표 변환
@@ -195,20 +212,6 @@ puts response.translatedText
 ```
 Naver::Share.url(url: "https://github.com/kimsuelim", title: "The unofficial NAVER SDK for Ruby")
 # => "http://share.naver.com/web/shareView.nhn?url=https%3A%2F%2Fgithub.com%2Fkimsuelim&title=The+unofficial+NAVER+SDK+for+Ruby"
-```
-
-## 클로바
-
-### 음성합성(Beta)
-```
-response = Naver::Clova.tts(
-  speaker: "mijin",
-  speed: 0,
-  text: "기술이 인간을 대체하는 것이 아니라 인간은 기술의 도움으로 더욱 창조적으로 될 것이라는 믿는다."
-)
-
-file = File.open("tts.mp3", "wb") { |f| f.write(response) }
-# => 62532
 ```
 
 ## 검색
