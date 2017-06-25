@@ -3,8 +3,9 @@ module Naver # :nodoc:
   class Shortenurl < Client
     class << self
       # 단축URL
-      # @param params [Hash] Params for the origin url
-      def url(params = {})
+      # @param url [String] 단축하고자 하는 원본 URL
+      def url(url:)
+        params = { url: url }
         parse(JSON.parse(connection.post("/v1/util/shorturl", params).body)["result"])
       end
     end

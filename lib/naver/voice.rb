@@ -10,6 +10,7 @@ module Naver # :nodoc:
       def tts(speaker:, speed:, text:)
         params = method(__method__).parameters.map(&:last).map { |p| [p, eval(p.to_s)] }.to_h
         connection.post("/v1/voice/tts.bin", params).body
-      end end
+      end
+    end
   end
 end
