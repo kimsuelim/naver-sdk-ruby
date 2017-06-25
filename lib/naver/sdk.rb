@@ -14,7 +14,7 @@ require "naver/papago"
 require "naver/profile"
 require "naver/search"
 require "naver/share"
-require "naver/shortenurl"
+require "naver/shorturl"
 require "naver/vision"
 require "naver/voice"
 

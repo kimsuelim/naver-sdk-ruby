@@ -194,7 +194,7 @@ puts response[0].point.x
 
 ### url
 ```ruby
-response = Naver::Shortenurl.url(url: "https://github.com/kimsuelim")
+response = Naver::Shorturl.shorten(url: "https://github.com/kimsuelim")
 # => #<Naver::ObjectifiedHash:70284972276780 {hash: {
   "hash"=>"Fr4K6WFj",
   "url"=>"http://me2.do/Fr4K6WFj",

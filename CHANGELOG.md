@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [unreleased]
 - [new] 얼굴인식(Beta)
 - [breaking] `Naver::Clova::tts` renamed to `Naver::Voice::tts`.
+- [breaking] `Naver::Shortenurl::url` renamed to `Naver::Shorturl::shorten`.
 
 ## [0.2.0] - 2017-06-25
 - [new] 음성합성(Beta)
