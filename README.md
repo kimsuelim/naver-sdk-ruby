@@ -5,6 +5,13 @@
 [![Gem Version](https://badge.fury.io/rb/naver-sdk.svg)](https://badge.fury.io/rb/naver-sdk)
 
 A ruby client for the NAVER API. [https://developers.naver.com](https://developers.naver.com)
+
+## Links of Interest
+
+* [네이버 개발자 센터](https://developers.naver.com)
+* [API 문서](http://www.rubydoc.info/github/kimsuelim/naver-sdk-ruby/)
+* [Change Log](https://github.com/kimsuelim/naver-sdk-ruby/blob/master/CHANGELOG.md)
+
 ## Installation
 
 Add this line to your application's Gemfile:
