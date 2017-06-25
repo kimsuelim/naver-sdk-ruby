@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [unreleased]
+- No significant changes.
+
+## [0.3.0] - 2017-06-26
 - [new] 얼굴인식(Beta)
 - [breaking] `Naver::Clova::tts` renamed to `Naver::Voice::tts`.
 - [breaking] `Naver::Shortenurl::url` renamed to `Naver::Shorturl::shorten`.
@@ -18,4 +21,5 @@ All notable changes to this project will be documented in this file.
 
 [0.1.0]: https://github.com/kimsuelim/naver-sdk-ruby/releases/tag/v0.1.0
 [0.2.0]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.1.0...v0.2.0
-[unreleased]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.2.0...HEAD
+[0.3.0]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.2.0...v0.3.0
+[unreleased]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.3.0...HEAD
