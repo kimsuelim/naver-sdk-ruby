@@ -112,6 +112,43 @@ file = File.open("tts.mp3", "wb") { |f| f.write(response) }
 
 합성된 음성 듣기 [test/resources/tts.mp3](test/resources/tts.mp3)
 
+## 파파고
+
+### 한글인명 - 로마자 변환
+
+```ruby
+response = Naver::Papago.romanization(query: "김수림")
+=> #<Naver::ObjectifiedHash:70284972145960 {hash: {
+  "sFirstName"=>"김",
+  "aItems"=>[
+    {"name"=>"Kim Soorim", "score"=>"99"},
+    {"name"=>"Kim Soolim", "score"=>"97"},
+    {"name"=>"Kim Surim", "score"=>"78"},
+    {"name"=>"Kim Sulim", "score"=>"76"}
+  ]}
+}
+
+puts response.aItems[0].name
+# => "Kim Soorim"
+```
+
+### 기계번역(Beta)
+
+```ruby
+response = Naver::Papago.translate(
+  source: "ko",
+  target: "en",
+  text: "기술이 인간을 대체하는 것이 아니라 인간은 기술의 도움으로 더욱 창조적으로 될 것이라는 믿는다."
+)
+# => #<Naver::ObjectifiedHash:70362563050680 {hash: {
+  "translatedText"=>"To replace the technology not believe that humans are more creatively with the help of technology."
+  }
+}
+
+puts response.translatedText
+# => "To replace the technology not believe that humans are more creatively with the help of technology."
+```
+
 ## 지도
 
 ### 주소 -> 좌표 변환
@@ -166,44 +203,6 @@ response = Naver::Shortenurl.url(url: "https://github.com/kimsuelim")
 
 puts response.url
 # => "http://me2.do/Fr4K6WFj"
-```
-
-## 파파고
-
-### 한글인명 - 로마자 변환
-
-```ruby
-response = Naver::Papago.romanization(query: "김수림")
-=> #<Naver::ObjectifiedHash:70284972145960 {hash: {
-  "sFirstName"=>"김",
-  "aItems"=>[
-    {"name"=>"Kim Soorim", "score"=>"99"},
-    {"name"=>"Kim Soolim", "score"=>"97"},
-    {"name"=>"Kim Surim", "score"=>"78"},
-    {"name"=>"Kim Sulim", "score"=>"76"}
-  ]}
-}
-
-puts response.aItems[0].name
-# => "Kim Soorim"
-```
-
-### 기계번역(Beta)
-
-```ruby
-response = Naver::Papago.translate(
-  source: "ko",
-  target: "en",
-  text: "기술이 인간을 대체하는 것이 아니라 인간은 기술의 도움으로 더욱 창조적으로 될 것이라는 믿는다."
-)
-
-# => #<Naver::ObjectifiedHash:70362563050680 {hash: {
-  "translatedText"=>"To replace the technology not believe that humans are more creatively with the help of technology."
-  }
-}
-
-puts response.translatedText
-# => "To replace the technology not believe that humans are more creatively with the help of technology."
 ```
 
 ## 네이버 공유하기
