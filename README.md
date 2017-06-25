@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/kimsuelim/naver-sdk-ruby.svg?branch=master)](https://travis-ci.org/kimsuelim/naver-sdk-ruby)
 [![Coverage Status](https://coveralls.io/repos/github/kimsuelim/naver-sdk-ruby/badge.svg?branch=master)](https://coveralls.io/github/kimsuelim/naver-sdk-ruby?branch=master)
-[![Gem Version](https://badge.fury.io/rb/naver-sdk.svg)](http://badge.fury.io/rb/naver-sdk)
+[![Gem Version](https://badge.fury.io/rb/naver-sdk.svg)](https://badge.fury.io/rb/naver-sdk)
 
 A ruby client for the NAVER API. [https://developers.naver.com](https://developers.naver.com)
 ## Installation
@@ -40,6 +40,60 @@ Naver.configure do |config|
   config.debug = false
 end
 ```
+
+## 얼굴인식
+입력된 얼굴 사진을 분석해서 닮은 연예인이나 얼굴 감지
+
+### 유명인 얼굴인식(Beta)
+```
+response = Naver::Vision.celebrity(image: "test/resources/park.png")
+# => #<Naver::ObjectifiedHash:70286633240760 {hash: {
+  "info"=>{
+    "size"=>{"width"=>683, "height"=>377},
+    "faceCount"=>1
+  },
+  "faces"=>[
+    {"celebrity"=>{"value"=>"박성웅", "confidence"=>1.0}}
+  ]
+}}
+
+puts response.faces[0].celebrity.value
+# => "박성웅"
+```
+
+테스트에서 사용한 이미지 보기 [test/resources/park.png](test/resources/park.png)
+
+### 얼굴 감지(Beta)
+```
+response = Naver::Vision.face(image: "test/resources/park.png")
+# => #<Naver::ObjectifiedHash:70286633075440 {hash: {
+  "info"=>{"size"=>{"width"=>683, "height"=>377}, "faceCount"=>1},
+  "faces"=>[
+    {
+      "roi"=>{"x"=>214, "y"=>106, "width"=>117, "height"=>117},
+      "landmark"=>{
+        "leftEye"=>{"x"=>241, "y"=>137},
+        "rightEye"=>{"x"=>296, "y"=>126},
+        "nose"=>{"x"=>271, "y"=>166},
+        "leftMouth"=>{"x"=>250, "y"=>195},
+        "rightMouth"=>{"x"=>309, "y"=>185}
+      },
+      "gender"=>{"value"=>"male", "confidence"=>0.999884},
+      "age"=>{"value"=>"44~48", "confidence"=>0.79507},
+      "emotion"=>{"value"=>"smile", "confidence"=>0.988639},
+      "pose"=>{"value"=>"frontal_face", "confidence"=>0.99785}
+    }
+  ]
+}}
+
+puts response.faces[0].gender.value
+# => "male"
+
+puts response.faces[0].emotion.value
+# => "smile"
+```
+
+테스트에서 사용한 이미지 보기 [test/resources/park.png](test/resources/park.png)
 
 ## 지도
 
@@ -156,9 +210,6 @@ response = Naver::Clova.tts(
 file = File.open("tts.mp3", "wb") { |f| f.write(response) }
 # => 62532
 ```
-
-### 얼굴인식(Beta)
-TODO...
 
 ## 검색
 

@@ -16,6 +16,7 @@ require "naver/profile"
 require "naver/search"
 require "naver/share"
 require "naver/shortenurl"
+require "naver/vision"
 
 module Naver
   extend Config
