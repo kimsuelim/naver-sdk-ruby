@@ -2,13 +2,14 @@
 All notable changes to this project will be documented in this file.
 
 ## [unreleased]
-- 얼굴인식(Beta)
+- [new] 얼굴인식(Beta)
+- [breaking] `Naver::Clova::tts` renamed to `Naver::Voice::tts`.
 
 ## [0.2.0] - 2017-06-25
-- 음성합성(Beta)
-- 네이버 공유하기
-- Naver::Search.adult 리턴값을 "1" -> true, "0" -> false로 변경
-- Naver::Search.errata에서 오타가 없을 경우 리턴값을 "" -> nil로 변경
+- [new] 음성합성(Beta)
+- [new] 네이버 공유하기
+- [breaking] Naver::Search.adult 리턴값을 "1" -> true, "0" -> false로 변경
+- [breaking] Naver::Search.errata에서 오타가 없을 경우 리턴값을 "" -> nil로 변경
 
 ## [0.1.0] - 2017-06-24
 
