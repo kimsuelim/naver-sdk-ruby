@@ -50,14 +50,14 @@ module Naver
     private
 
     def request(verb, path, params = {})
-      raise ArgumentError.new "Invalid http verb #{verb}" if ![:get, :post, :put, :delete].include?(verb)
+      raise ArgumentError.new "Invalid http verb #{verb}" unless [:get, :post, :put, :delete].include?(verb)
 
       response = @connection.run_request(verb, path, params, public_auth_header) do |request|
         request.params.update(params) if verb == :get && params
         yield(request) if block_given?
       end
 
-      if !(200..299).include?(response.status)
+      unless (200..299).include?(response.status)
         body = JSON.parse(response.body)
         raise Naver::Error.new(body)
       end

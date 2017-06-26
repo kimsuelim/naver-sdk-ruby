@@ -60,7 +60,7 @@ module Naver
     private
 
     def refresh_token!
-      return if !@oauth_token.expired?
+      return unless @oauth_token.expired?
       @oauth_token = @oauth_token.refresh_token
     end
   end
