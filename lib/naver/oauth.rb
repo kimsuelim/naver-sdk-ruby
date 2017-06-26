@@ -65,4 +65,3 @@ module Naver
     end
   end
 end
-

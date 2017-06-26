@@ -16,7 +16,7 @@ class OauthTest < Minitest::Spec
   end
 
   it "extract token" do
-    stub = {"token_type"=>"bearer", :access_token=>"AAAAOVdlgUlGTej6GJj2olv2cyPGiLdFX/oT3u29i48PtUYAQmahbfP58ItCdanZz7nninqZNmQWiDVaXy26zk8rny8=", :refresh_token=>"fXKPyKGM2zfAxfgrDQKBA60CKsM8h9BlfqisQvtTiiWnwF5vYlAghIBSu6WvNrSmDLCCmKrfVFipEbJurOxFLoW6NdohlIqCp4mSdviiHZxLTYR0aPwnbxWmkByk70ZisuX3A", :expires_at=>1498105810}
+    stub = { "token_type" => "bearer", :access_token => "AAAAOVdlgUlGTej6GJj2olv2cyPGiLdFX/oT3u29i48PtUYAQmahbfP58ItCdanZz7nninqZNmQWiDVaXy26zk8rny8=", :refresh_token => "fXKPyKGM2zfAxfgrDQKBA60CKsM8h9BlfqisQvtTiiWnwF5vYlAghIBSu6WvNrSmDLCCmKrfVFipEbJurOxFLoW6NdohlIqCp4mSdviiHZxLTYR0aPwnbxWmkByk70ZisuX3A", :expires_at => 1498105810 }
     oauth.stub(:extract_token, stub) do
       oauth.extract_token.must_equal stub
     end

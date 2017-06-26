@@ -11,7 +11,7 @@ module Naver # :nodoc:
       # Search > News (검색 > 뉴스)
       # @param params [Hash] Params for the search
       def news(params = {})
-       parse(JSON.parse(connection.get("/v1/search/news", params).body))
+        parse(JSON.parse(connection.get("/v1/search/news", params).body))
       end
 
       # Search > Book (검색 > 책)

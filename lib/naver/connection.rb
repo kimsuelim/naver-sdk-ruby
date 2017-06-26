@@ -1,7 +1,7 @@
 module Naver
   class Connection
     # Base URI for the NAVER API..
-    DEFAULT_API_BASE_URI   = "https://openapi.naver.com"
+    DEFAULT_API_BASE_URI = "https://openapi.naver.com"
 
     # Create a Connection object.
     # @param api_base_uri [String] Base URI at which to make API calls.

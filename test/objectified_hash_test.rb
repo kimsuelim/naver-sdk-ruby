@@ -2,7 +2,7 @@ require "test_helper"
 
 class ObjectifiedHashTest < Minitest::Spec
   before do
-    @hash = { a: 1, b: 2, "string" => "string", symbol: :symbol, items: [{ a: 1}] }
+    @hash = { a: 1, b: 2, "string" => "string", symbol: :symbol, items: [{ a: 1 }] }
     @oh = Naver::ObjectifiedHash.new(@hash)
   end
 

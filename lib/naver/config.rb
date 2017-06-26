@@ -17,7 +17,7 @@ module Naver
 
     def options
       options = {}
-      OPTION_KEYS.each{ |key| options[key] = send(key) }
+      OPTION_KEYS.each { |key| options[key] = send(key) }
       options
     end
   end
