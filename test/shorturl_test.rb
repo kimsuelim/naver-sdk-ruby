@@ -5,6 +5,6 @@ class ShorturlTest < Minitest::Spec
     response = Naver::Shorturl.shorten(url: "https://github.com/kimsuelim")
     response.hash.wont_be_nil
     response.url.wont_be_nil
-    response.orgUrl.must_equal "https://github.com/kimsuelim"
+    response.org_url.must_equal "https://github.com/kimsuelim"
   end
 end

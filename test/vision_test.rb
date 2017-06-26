@@ -4,7 +4,7 @@ class VisionTest < Minitest::Spec
   it "celebrity" do
     response = Naver::Vision.celebrity(image: "test/resources/park.png")
     response.info.size.wont_be_nil
-    response.info.faceCount.must_equal 1
+    response.info.face_count.must_equal 1
     response.faces.must_be_instance_of Array
     response.faces[0].celebrity.value.must_equal "박성웅"
     response.faces[0].celebrity.confidence.must_equal 1.0

@@ -80,7 +80,7 @@ class SearchTest < Minitest::Spec
   private
 
   def common_assertions(response)
-    response.lastBuildDate.wont_be_nil
+    response.last_build_date.wont_be_nil
     response.total.wont_be_nil
     response.start.must_equal 1
     # response.display.wont_be_nil

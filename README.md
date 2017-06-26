@@ -57,7 +57,7 @@ response = Naver::Vision.celebrity(image: "test/resources/park.png")
 # => #<Naver::ObjectifiedHash:70286633240760 {hash: {
   "info"=>{
     "size"=>{"width"=>683, "height"=>377},
-    "faceCount"=>1
+    "face_count"=>1
   },
   "faces"=>[
     {"celebrity"=>{"value"=>"박성웅", "confidence"=>1.0}}
@@ -74,16 +74,16 @@ puts response.faces[0].celebrity.value
 ```
 response = Naver::Vision.face(image: "test/resources/park.png")
 # => #<Naver::ObjectifiedHash:70286633075440 {hash: {
-  "info"=>{"size"=>{"width"=>683, "height"=>377}, "faceCount"=>1},
+  "info"=>{"size"=>{"width"=>683, "height"=>377}, "face_count"=>1},
   "faces"=>[
     {
       "roi"=>{"x"=>214, "y"=>106, "width"=>117, "height"=>117},
       "landmark"=>{
-        "leftEye"=>{"x"=>241, "y"=>137},
-        "rightEye"=>{"x"=>296, "y"=>126},
+        "left_eye"=>{"x"=>241, "y"=>137},
+        "right_eye"=>{"x"=>296, "y"=>126},
         "nose"=>{"x"=>271, "y"=>166},
-        "leftMouth"=>{"x"=>250, "y"=>195},
-        "rightMouth"=>{"x"=>309, "y"=>185}
+        "left_mouth"=>{"x"=>250, "y"=>195},
+        "right_mouth"=>{"x"=>309, "y"=>185}
       },
       "gender"=>{"value"=>"male", "confidence"=>0.999884},
       "age"=>{"value"=>"44~48", "confidence"=>0.79507},
@@ -126,8 +126,8 @@ file = File.open("tts.mp3", "wb") { |f| f.write(response) }
 ```ruby
 response = Naver::Papago.romanization(query: "김수림")
 => #<Naver::ObjectifiedHash:70284972145960 {hash: {
-  "sFirstName"=>"김",
-  "aItems"=>[
+  "s_first_name"=>"김",
+  "a_items"=>[
     {"name"=>"Kim Soorim", "score"=>"99"},
     {"name"=>"Kim Soolim", "score"=>"97"},
     {"name"=>"Kim Surim", "score"=>"78"},
@@ -135,7 +135,7 @@ response = Naver::Papago.romanization(query: "김수림")
   ]}
 }
 
-puts response.aItems[0].name
+puts response.a_items[0].name
 # => "Kim Soorim"
 ```
 
@@ -148,11 +148,11 @@ response = Naver::Papago.translate(
   text: "기술이 인간을 대체하는 것이 아니라 인간은 기술의 도움으로 더욱 창조적으로 될 것이라는 믿는다."
 )
 # => #<Naver::ObjectifiedHash:70362563050680 {hash: {
-  "translatedText"=>"To replace the technology not believe that humans are more creatively with the help of technology."
+  "translated_text"=>"To replace the technology not believe that humans are more creatively with the help of technology."
   }
 }
 
-puts response.translatedText
+puts response.translated_text
 # => "To replace the technology not believe that humans are more creatively with the help of technology."
 ```
 
@@ -162,10 +162,11 @@ puts response.translatedText
 
 ```ruby
 response = Naver::Map.geocode(query: "불정로 6")
+# => <Naver::ObjectifiedHash:70145842773600 {hash: {:total=>1, :userquery=>"불정로 6", :items=>[{:address=>"경기도 성남시 분당구 불정로  6 NAVER그린팩토리", :addrdetail=>{:country=>"대한민국", :sido=>"경기도", :sigugun=>"성남시 분당구", :dongmyun=>"불정로", :rest=>" 6 NAVER그린팩토리"}, :is_road_address=>true, :point=>{:x=>127.1052133, :y=>37.3595316}}]}}
 # => [#<Naver::ObjectifiedHash:70284981985920 {hash: {
   "address"=>"경기도 성남시 분당구 불정로  6 NAVER그린팩토리",
   "addrdetail"=>{"country"=>"대한민국", "sido"=>"경기도", "sigugun"=>"성남시 분당구", "dongmyun"=>"불정로", "rest"=>" 6 NAVER그린팩토리"},
-  "isRoadAddress"=>true,
+  "is_road_address"=>true,
   "point"=>{"x"=>127.1052133, "y"=>37.3595316}}}
 ]
 
@@ -183,8 +184,8 @@ response = Naver::Map.reverse_geocode(lat: "127.1141382", lng: "37.3599968")
 # => [#<Naver::ObjectifiedHash:70284981856220 {hash: {
   "address"=>"경기도 성남시 분당구 정자동 257-1",
   "addrdetail"=>{"country"=>"대한민국", "sido"=>"경기도", "sigugun"=>"성남시 분당구", "dongmyun"=>"정자동", "rest"=>"257-1"},
-  "isAdmAddress"=>false,
-  "isRoadAddress"=>false,
+  "is_adm_address"=>false,
+  "is_road_address"=>false,
   "point"=>{"x"=>127.1164925, "y"=>37.3597611}}
   },
   ...
@@ -205,7 +206,7 @@ response = Naver::Shorturl.shorten(url: "https://github.com/kimsuelim")
 # => #<Naver::ObjectifiedHash:70284972276780 {hash: {
   "hash"=>"Fr4K6WFj",
   "url"=>"http://me2.do/Fr4K6WFj",
-  "orgUrl"=>"https://github.com/kimsuelim"}
+  "org_url"=>"https://github.com/kimsuelim"}
 }
 
 puts response.url
@@ -226,7 +227,7 @@ Naver::Share.url(url: "https://github.com/kimsuelim", title: "The unofficial NAV
 ```ruby
 search_results = Naver::Search.blog(query: "블로그")
 # => <Naver::ObjectifiedHash:70284981057980 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 19:11:02 +0900", "total"=>26223046, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 19:11:02 +0900", "total"=>26223046, "start"=>1, "display"=>10,
   "items"=>[
      {
        "title"=>"<b>블로그</b>마케팅교육 어떻게 시작해야 할까요?",
@@ -251,14 +252,14 @@ puts search_results.items[0].bloggername
 ```ruby
 search_results = Naver::Search.news(query: "뉴스")
 # => #<Naver::ObjectifiedHash:70284981108020 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 19:17:32 +0900", "total"=>31804178, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 19:17:32 +0900", "total"=>31804178, "start"=>1, "display"=>10,
   "items"=>[
     {
       "title"=>"'믿듣맘무' 마마무, 걸그룹 음원차트 평정… 멜론 누적 이용자수 94만명 돌파",
       "originallink"=>"http://enews24.tving.com/news/article.asp?nsID=1221358",
       "link"=>"http://news.naver.com/main/read.nhn?mode=LSD&mid=sec&sid1=106&oid=404&aid=0000180862",
       "description"=>"녹아져 있는, 밉지 않은 귀여운 허세가 인상적인 큐티 허세송이다. 한편 마마무는 24일 MBC '쇼! 음악중심' 무대에 오른다. 사진 = RBW 제공 이지영 기자 [Copyright ⓒ Asia No.1 연예<b>뉴스</b> enews24.net 무단전재 및 재배포 금지]",
-      "pubDate"=>"Sat, 24 Jun 2017 19:15:00 +0900"
+      "pub_date"=>"Sat, 24 Jun 2017 19:15:00 +0900"
     },
     ...
   ]
@@ -272,7 +273,7 @@ puts search_results.items[0].title
 ```ruby
 search_results = Naver::Search.book(query: "책")
 # => #<Naver::ObjectifiedHash:70284982544600 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 20:08:46 +0900", "total"=>555896, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 20:08:46 +0900", "total"=>555896, "start"=>1, "display"=>10,
   "items"=>[
     {
       "title"=>"너의 이름은",
@@ -309,7 +310,7 @@ puts response.adult
 ```ruby
 search_results = Naver::Search.encyc(query: "백과 사전")
 # => #<Naver::ObjectifiedHash:70284982397080 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 20:12:58 +0900", "total"=>4332, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 20:12:58 +0900", "total"=>4332, "start"=>1, "display"=>10,
   "items"=>[
     {
       "title"=>"<b>백과사전</b>",
@@ -329,17 +330,17 @@ puts search_results.items[0].title
 ```ruby
 search_results = Naver::Search.movie(query: "킬빌")
 # => #<Naver::ObjectifiedHash:70284982296880 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 20:15:41 +0900", "total"=>3, "start"=>1, "display"=>3,
+  "last_build_date"=>"Sat, 24 Jun 2017 20:15:41 +0900", "total"=>3, "start"=>1, "display"=>3,
   "items"=>[
     {
       "title"=>"<b>킬 빌</b> - 2부",
       "link"=>"http://movie.naver.com/movie/bi/mi/basic.nhn?code=37493",
       "image"=>"http://imgmovie.naver.com/mdi/mit110/0374/C7493-00.jpg",
       "subtitle"=>"Kill Bill: Vol. 2",
-      "pubDate"=>"2004",
+      "pub_date"=>"2004",
       "director"=>"쿠엔틴 타란티노|",
       "actor"=>"우마 서먼|데이빗 캐러딘|",
-      "userRating"=>"7.48"
+      "user_rating"=>"7.48"
     },
     ...
   ]
@@ -353,7 +354,7 @@ puts search_results.items[0].title
 ```ruby
 search_results = Naver::Search.cafearticle(query: "카페글")
 # => #<Naver::ObjectifiedHash:70284982183260 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 20:17:56 +0900", "total"=>216425, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 20:17:56 +0900", "total"=>216425, "start"=>1, "display"=>10,
   "items"=>[
     {
       "title"=>"예전 <b>카페글</b> 복습하기",
@@ -374,7 +375,7 @@ puts search_results.items[0].title
 ```ruby
 search_results = Naver::Search.kin(query: "지식인")
 # => #<Naver::ObjectifiedHash:70284982086840 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 20:20:19 +0900", "total"=>6931274, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 20:20:19 +0900", "total"=>6931274, "start"=>1, "display"=>10,
   "items"=>[
     {
       "title"=>"<b>지식인</b> 디렉토리 변경",
@@ -393,7 +394,7 @@ puts search_results.items[0].title
 ```ruby
 search_results = Naver::Search.local(query: "제주도")
 # => #<Naver::ObjectifiedHash:70284981059020 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 20:51:22 +0900", "total"=>75791, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 20:51:22 +0900", "total"=>75791, "start"=>1, "display"=>10,
   "items"=>[
     {
       "title"=>"제주특별자치도청",
@@ -402,7 +403,7 @@ search_results = Naver::Search.local(query: "제주도")
       "description"=>"제주 뉴스, 생활민원, 여권발급, 문화, <b>제주도</b> 관광, 산업경제, 복지, 여성 정보 수록.",
       "telephone"=>"",
       "address"=>"제주특별자치도 제주시 연동 312-1 ",
-      "roadAddress"=>"제주특별자치도 제주시 문연로 6 ",
+      "road_address"=>"제주특별자치도 제주시 문연로 6 ",
       "mapx"=>"260641",
       "mapy"=>"100237"
     },
@@ -429,7 +430,7 @@ puts response.errata
 ```ruby
 search_results = Naver::Search.webkr(query: "웹문서")
 # => #<Naver::ObjectifiedHash:70284981547180 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 20:53:29 +0900", "total"=>1904994, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 20:53:29 +0900", "total"=>1904994, "start"=>1, "display"=>10,
   "items"=>[
     {
       "title"=>"카카오톡 <b>웹문서</b> 수집 인정 &quot;다음 검색 연동 중단&quot; - 오마이뉴스",
@@ -448,7 +449,7 @@ puts search_results.items[0].title
 ```ruby
 search_results = Naver::Search.image(query: "이미지")
 # => #<Naver::ObjectifiedHash:70284981346800 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 20:54:58 +0900", "total"=>1627087, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 20:54:58 +0900", "total"=>1627087, "start"=>1, "display"=>10,
   "items"=>[
     {
       "title"=>"볼매뿌뿌's StyleShare",
@@ -469,7 +470,7 @@ puts search_results.items[0].title
 ```ruby
 search_results = Naver::Search.shop(query: "쇼핑")
 # => #<Naver::ObjectifiedHash:70284981152140 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 20:56:19 +0900", "total"=>8895965, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 20:56:19 +0900", "total"=>8895965, "start"=>1, "display"=>10,
   "items"=>[
     {
       "title"=>"팩앤롤 접이식 휴대용 핸드 <b>쇼핑</b>카트",
@@ -478,8 +479,8 @@ search_results = Naver::Search.shop(query: "쇼핑")
       "lprice"=>"10400",
       "hprice"=>"0",
       "mallName"=>"베이직기프트",
-      "productId"=>"11449581836",
-      "productType"=>"2"
+      "product_id"=>"11449581836",
+      "product_type"=>"2"
     },
     ...
   ]
@@ -493,7 +494,7 @@ puts search_results.items[0].title
 ```ruby
 search_results = Naver::Search.doc(query: "전문자료")
 # => #<Naver::ObjectifiedHash:70284980468480 {hash: {
-  "lastBuildDate"=>"Sat, 24 Jun 2017 20:57:34 +0900", "total"=>41554, "start"=>1, "display"=>10,
+  "last_build_date"=>"Sat, 24 Jun 2017 20:57:34 +0900", "total"=>41554, "start"=>1, "display"=>10,
   "items"=>[
     {
       "title"=>"이미지 검색 기능을 가진 문서간 <b>전문자료</b>의 유사도 검색 시스템",

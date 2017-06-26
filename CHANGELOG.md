@@ -2,11 +2,11 @@
 All notable changes to this project will be documented in this file.
 
 ## [unreleased]
-- No significant changes.
+- [breaking] JSON 출력 결과를 CamelCase 에서 underscore 변경
 
 ## [0.3.0] - 2017-06-26
 - [new] 얼굴인식(Beta)
-- [breaking] `Naver::Clova::tts` renamed to `Naver::Voice::tts`.
+- [breaking] `Naver::Clova::tts` renamed to `Naver::Voice.tts`.
 - [breaking] `Naver::Shortenurl::url` renamed to `Naver::Shorturl::shorten`.
 
 ## [0.2.0] - 2017-06-25
