@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 - [breaking] JSON 출력 결과를 CamelCase 에서 underscore 변경
+- [breaking] Naver::Papago.romanization 리턴값의 key 변경. s_first_name -> first_name,
+  a_items -> items
 
 ## [0.3.0] - 2017-06-26
 - [new] 얼굴인식(Beta)

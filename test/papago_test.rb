@@ -12,17 +12,17 @@ class PapagoTest < Minitest::Spec
 
   it "romanization" do
     response = Naver::Papago.romanization(query: "김수림")
-    response.s_first_name.must_equal "김"
-    response.a_items[0].name.must_equal "Kim Soorim"
-    response.a_items[0].score.must_equal "99"
+    response.first_name.must_equal "김"
+    response.items[0].name.must_equal "Kim Soorim"
+    response.items[0].score.must_equal "99"
 
-    response.a_items[1].name.must_equal "Kim Soolim"
-    response.a_items[1].score.must_equal "97"
+    response.items[1].name.must_equal "Kim Soolim"
+    response.items[1].score.must_equal "97"
 
-    response.a_items[2].name.must_equal "Kim Surim"
-    response.a_items[2].score.must_equal "78"
+    response.items[2].name.must_equal "Kim Surim"
+    response.items[2].score.must_equal "78"
 
-    response.a_items[3].name.must_equal "Kim Sulim"
-    response.a_items[3].score.must_equal "76"
+    response.items[3].name.must_equal "Kim Sulim"
+    response.items[3].score.must_equal "76"
   end
 end

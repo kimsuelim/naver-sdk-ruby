@@ -17,7 +17,12 @@ module Naver # :nodoc:
       # @return [Hash] 변환 결과
       def romanization(query:)
         params = { query: query }
-        parse(JSON.parse(connection.get("/v1/krdict/romanization", params).body)["aResult"][0])
+        result = JSON.parse(connection.get("/v1/krdict/romanization", params).body)["aResult"][0]
+        if result
+          result["firstName"] = result.delete("sFirstName")
+          result["items"] = result.delete("aItems")
+        end
+        parse(result)
       end
     end
   end

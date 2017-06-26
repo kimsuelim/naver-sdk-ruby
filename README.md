@@ -126,8 +126,8 @@ file = File.open("tts.mp3", "wb") { |f| f.write(response) }
 ```ruby
 response = Naver::Papago.romanization(query: "김수림")
 => #<Naver::ObjectifiedHash:70284972145960 {hash: {
-  "s_first_name"=>"김",
-  "a_items"=>[
+  "first_name"=>"김",
+  "items"=>[
     {"name"=>"Kim Soorim", "score"=>"99"},
     {"name"=>"Kim Soolim", "score"=>"97"},
     {"name"=>"Kim Surim", "score"=>"78"},
@@ -135,7 +135,7 @@ response = Naver::Papago.romanization(query: "김수림")
   ]}
 }
 
-puts response.a_items[0].name
+puts response.items[0].name
 # => "Kim Soorim"
 ```
 
