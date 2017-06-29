@@ -3,7 +3,7 @@ require "faraday"
 
 require "naver/sdk/version"
 require "naver/ext/hash/to_underscore_keys"
-require "naver/config"
+require "naver/configration"
 require "naver/connection"
 require "naver/client"
 require "naver/error"
@@ -20,8 +20,5 @@ require "naver/vision"
 require "naver/voice"
 
 module Naver
-  extend Config
-
-  module Sdk
-  end
+  extend Configration
 end

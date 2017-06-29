@@ -1,17 +1,12 @@
 module Naver
   class Connection
-    # Base URI for the NAVER API..
-    DEFAULT_API_BASE_URI = "https://openapi.naver.com"
-
     # Create a Connection object.
-    # @param api_base_uri [String] Base URI at which to make API calls.
-    def initialize(api_base_uri: DEFAULT_API_BASE_URI)
+    def initialize
       @client_id     = Naver.client_id
       @client_secret = Naver.client_secret
-      @api_base_uri  = api_base_uri
-
-      headers = { user_agent: "NAVER Ruby SDK Gem #{ Naver::Sdk::VERSION}" }
-      @connection = Faraday.new(url: @api_base_uri, headers: headers) do |faraday|
+      @api_base_uri  = Configration::DEFAULT_API_BASE_URI
+      @headers = { user_agent: Configration::DEFAULT_USER_AGENT }
+      @connection = Faraday.new(url: @api_base_uri, headers: @headers) do |faraday|
         faraday.request :multipart
         faraday.request :url_encoded
         faraday.response :logger if Naver.debug
