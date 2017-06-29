@@ -2,7 +2,7 @@ module Naver
   # Defines constants and methods related to configuration.
   module Configration
     # An array of valid keys in the options hash when configuring a Naver::Client.
-    OPTION_KEYS = [:client_id, :client_secret, :redirect_uri, :timeout, :debug]
+    OPTION_KEYS = [:client_id, :client_secret, :redirect_uri, :timeout, :debug].freeze
 
     # The user agent that will be sent to the API endpoint if none is set.
     DEFAULT_USER_AGENT = "NAVER Ruby SDK Gem #{Naver::Sdk::VERSION}".freeze
