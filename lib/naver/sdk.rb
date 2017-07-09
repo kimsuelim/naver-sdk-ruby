@@ -2,7 +2,7 @@ require "oauth2"
 require "faraday"
 
 require "naver/sdk/version"
-require "naver/ext/hash/to_underscore_keys"
+require "naver/core_ext/hash/keys"
 require "naver/configration"
 require "naver/connection"
 require "naver/client"

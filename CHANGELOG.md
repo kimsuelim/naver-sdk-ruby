@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 - Improve Configration
+- core_ext/hash/keys
 
 ## [0.4.0] - 2017-06-26
 - [breaking] JSON 출력 결과를 CamelCase 에서 underscore 변경

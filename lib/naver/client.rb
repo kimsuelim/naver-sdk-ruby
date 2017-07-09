@@ -10,10 +10,10 @@ module Naver # :nodoc:
     # Converts the response body to an ObjectifiedHash.
     def self.parse(body)
       if body.is_a?(Hash)
-        body = body.to_underscore_keys
+        body = body.deep_underscore_keys
         ObjectifiedHash.new(body)
       elsif body.is_a?(Array)
-        body = body.to_underscore_keys
+        body = body.deep_underscore_keys
         body.collect! { |e| ObjectifiedHash.new(e) }
       elsif body
         true
