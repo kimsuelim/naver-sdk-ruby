@@ -2,7 +2,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [unreleased]
-- Improve Configration
+
+## [0.5.0] - 2017-07-09
+- improve configration
 - core_ext/hash/keys
 
 ## [0.4.0] - 2017-06-26
@@ -29,4 +31,5 @@ All notable changes to this project will be documented in this file.
 [0.2.0]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.1.0...v0.2.0
 [0.3.0]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.2.0...v0.3.0
 [0.4.0]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.3.0...v0.4.0
-[unreleased]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.4.0...HEAD
+[0.5.0]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.4.0...v0.5.0
+[unreleased]: https://github.com/kimsuelim/naver-sdk-ruby/compare/v0.5.0...HEAD
