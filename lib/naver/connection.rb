@@ -4,8 +4,8 @@ module Naver
     def initialize
       @client_id     = Naver.client_id
       @client_secret = Naver.client_secret
-      @api_base_uri  = Configration::DEFAULT_API_BASE_URI
-      @headers = { user_agent: Configration::DEFAULT_USER_AGENT }
+      @api_base_uri  = Configuration::DEFAULT_API_BASE_URI
+      @headers = { user_agent: Configuration::DEFAULT_USER_AGENT }
       @connection = Faraday.new(url: @api_base_uri, headers: @headers) do |faraday|
         faraday.request :multipart
         faraday.request :url_encoded

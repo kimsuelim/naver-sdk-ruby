@@ -5,10 +5,10 @@ module Naver
     def initialize(redirect_uri: Naver.redirect_uri)
       @client_id     = Naver.client_id
       @client_secret = Naver.client_secret
-      @oauth_base_uri = Configration::DEFAULT_OAUTH_BASE_URI
+      @oauth_base_uri = Configuration::DEFAULT_OAUTH_BASE_URI
       @redirect_uri = redirect_uri
 
-      headers = { user_agent: Configration::DEFAULT_USER_AGENT }
+      headers = { user_agent: Configuration::DEFAULT_USER_AGENT }
       @oauth = OAuth2::Client.new(@client_id, @client_secret, site: @oauth_base_uri, authorize_url: "/oauth2.0/authorize", token_url: "/oauth2.0/token", headers: headers) do |http|
         http.request :multipart
         http.request :url_encoded

@@ -2,9 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 ## [unreleased]
+- fix typo
 
 ## [0.5.0] - 2017-07-09
-- improve configration
+- improve configuration
 - core_ext/hash/keys
 
 ## [0.4.0] - 2017-06-26

@@ -5,7 +5,7 @@ class PapagoTest < Minitest::Spec
     response = Naver::Papago.translate(
       source: "ko",
       target: "en",
-      text: "기술이 인간을 대체하는 것이 아니라 인간은 기술의 도움으로 더욱 창조적으로 될 것이라는 믿는다."
+      text: "기술은 사람을 대체하는 것이 아니라 기술의 도움으로 사람을 더 창조적으로 만들 것이라 믿는다."
     )
     response.translated_text.wont_be_nil
   end

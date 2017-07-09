@@ -2,15 +2,15 @@ require "test_helper"
 
 class ConfigTest < Minitest::Spec
   it "user_agent" do
-    Naver::Configration::DEFAULT_USER_AGENT.must_equal "NAVER Ruby SDK Gem #{Naver::Sdk::VERSION}"
+    Naver::Configuration::DEFAULT_USER_AGENT.must_equal "NAVER Ruby SDK Gem #{Naver::Sdk::VERSION}"
   end
 
   it "api_base_uri" do
-    Naver::Configration::DEFAULT_API_BASE_URI.must_equal "https://openapi.naver.com"
+    Naver::Configuration::DEFAULT_API_BASE_URI.must_equal "https://openapi.naver.com"
   end
 
   it "oauth_base_uri" do
-    Naver::Configration::DEFAULT_OAUTH_BASE_URI.must_equal "https://nid.naver.com"
+    Naver::Configuration::DEFAULT_OAUTH_BASE_URI.must_equal "https://nid.naver.com"
   end
 
   it "must configure the gem with your client_id and client_secret" do
