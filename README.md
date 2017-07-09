@@ -1,10 +1,10 @@
-# NAVER SDK for Ruby
+# 네이버 루비 SDK (NAVER SDK for Ruby) 
 
 [![Build Status](https://travis-ci.org/kimsuelim/naver-sdk-ruby.svg?branch=master)](https://travis-ci.org/kimsuelim/naver-sdk-ruby)
 [![Coverage Status](https://coveralls.io/repos/github/kimsuelim/naver-sdk-ruby/badge.svg?branch=master)](https://coveralls.io/github/kimsuelim/naver-sdk-ruby?branch=master)
 [![Gem Version](https://badge.fury.io/rb/naver-sdk.svg)](https://badge.fury.io/rb/naver-sdk)
 
-A ruby client for the NAVER API. [https://developers.naver.com](https://developers.naver.com)
+네이버 오픈API 루비 클라이언트 (A ruby client for the NAVER API)
 
 ## Links of Interest
 
@@ -145,15 +145,15 @@ puts response.items[0].name
 response = Naver::Papago.translate(
   source: "ko",
   target: "en",
-  text: "기술이 인간을 대체하는 것이 아니라 인간은 기술의 도움으로 더욱 창조적으로 될 것이라는 믿는다."
+  text: "기술은 사람을 대체하는 것이 아니라 기술의 도움으로 사람을 더 창조적으로 만들 것이라 믿는다."
 )
 # => #<Naver::ObjectifiedHash:70362563050680 {hash: {
-  "translated_text"=>"To replace the technology not believe that humans are more creatively with the help of technology."
+  "translated_text"=>"It is to replace the technology is more creative with the help of technology, not believe that it would make."
   }
 }
 
 puts response.translated_text
-# => "To replace the technology not believe that humans are more creatively with the help of technology."
+# => "It is to replace the technology is more creative with the help of technology, not believe that it would make."
 ```
 
 ## 지도
@@ -162,7 +162,6 @@ puts response.translated_text
 
 ```ruby
 response = Naver::Map.geocode(query: "불정로 6")
-# => <Naver::ObjectifiedHash:70145842773600 {hash: {:total=>1, :userquery=>"불정로 6", :items=>[{:address=>"경기도 성남시 분당구 불정로  6 NAVER그린팩토리", :addrdetail=>{:country=>"대한민국", :sido=>"경기도", :sigugun=>"성남시 분당구", :dongmyun=>"불정로", :rest=>" 6 NAVER그린팩토리"}, :is_road_address=>true, :point=>{:x=>127.1052133, :y=>37.3595316}}]}}
 # => [#<Naver::ObjectifiedHash:70284981985920 {hash: {
   "address"=>"경기도 성남시 분당구 불정로  6 NAVER그린팩토리",
   "addrdetail"=>{"country"=>"대한민국", "sido"=>"경기도", "sigugun"=>"성남시 분당구", "dongmyun"=>"불정로", "rest"=>" 6 NAVER그린팩토리"},
