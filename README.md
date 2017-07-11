@@ -11,7 +11,7 @@
 * [네이버 개발자 센터](https://developers.naver.com)
 * [API 문서](http://www.rubydoc.info/github/kimsuelim/naver-sdk-ruby/)
 * [Changelog](https://github.com/kimsuelim/naver-sdk-ruby/blob/master/CHANGELOG.md)
-* [naver-sdk-kotlin](https://github.com/kimsuelim/naver-sdk-kotlin)
+* [네이버 코틀린 SDK](https://github.com/kimsuelim/naver-sdk-kotlin)
 
 ## Installation
 
