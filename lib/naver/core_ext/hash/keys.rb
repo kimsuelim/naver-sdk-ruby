@@ -1,4 +1,14 @@
 class Hash
+  # Returns a new hash with all keys converted using the +block+ operation.
+  def transform_keys
+    return enum_for(:transform_keys) { size } unless block_given?
+    result = {}
+    each_key do |key|
+      result[yield(key)] = self[key]
+    end
+    result
+  end unless method_defined?(:transform_keys)
+
   # Returns a new hash with all keys converted to underscore strings.
   #
   #   hash = { firstName: "Rob", lastName: "Bob" }
@@ -44,16 +54,6 @@ class Hash
   end
 
   private
-
-  # Returns a new hash with all keys converted using the +block+ operation.
-  def transform_keys
-    return enum_for(:transform_keys) { size } unless block_given?
-    result = {}
-    each_key do |key|
-      result[yield(key)] = self[key]
-    end
-    result
-  end
 
   # support methods for deep transforming nested hashes and arrays
   def deep_transform_keys_in_object(object, &block)
