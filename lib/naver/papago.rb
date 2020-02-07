@@ -9,7 +9,7 @@ module Naver # :nodoc:
       # @return [ObjectifiedHash] 번역된 문장
       def translate(source:, target:, text:)
         params = method(__method__).parameters.map(&:last).map { |p| [p, eval(p.to_s)] }.to_h
-        parse(JSON.parse(connection.post("/v1/language/translate", params).body)["message"]["result"])
+        parse(JSON.parse(connection.post("/v1/papago/n2mt", params).body)["message"]["result"])
       end
 
       # 한글인명 - 로마자 변환
